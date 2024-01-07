@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <style>
+        body {
+            font-family: 'Arial', Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #aeba60;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #db049b;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #taskInput {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ef1515;
+            border-radius: 4px;
+        }
+
+        #taskList {
+            width: 80%;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .task {
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .completed-task {
+            background-color: #e0e0e0;
+            text-decoration: line-through;
+        }
+
+        button {
+            background-color: #4285f4;
+            color: #ffffff;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #cd7d7d;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>To-Do App</h1>
+        <input type="text" id="taskInput" placeholder="Add a new task...">
+    </header>
+
+    <section>
+        <h2>Pending Tasks</h2>
+        <ul id="taskList"></ul>
+    </section>
+
+    <section>
+        <h2>Completed Tasks</h2>
+        <ul id="completedTaskList"></ul>
+    </section>
+
+    <footer>
+        <p>Created with ❤ by Olivia Saha</p>
+    </footer>
+
+    <script>
+        const taskInput = document.getElementById('taskInput');
+        const taskList = document.getElementById('taskList');
+        const completedTaskList = document.getElementById('completedTaskList');
+
+        function addTask() {
+            const taskText = taskInput.value;
+            if (taskText.trim() !== '') {
+                const taskItem = document.createElement('li');
+                taskItem.className = 'task';
+                const timestamp = new Date().toLocaleString();
+                taskItem.innerHTML = `
+                    <span>${taskText} - ${timestamp}</span>
+                    <button onclick="completeTask(this)">Complete</button>
+                    <button onclick="deleteTask(this)">Delete</button>
+                `;
+                taskList.appendChild(taskItem);
+                taskInput.value = '';
+            }
+        }
+
+        function completeTask(button) {
+            const taskItem = button.parentNode;
+            taskItem.classList.toggle('completed-task');
+            button.innerText = taskItem.classList.contains('completed-task') ? 'Undo' : 'Complete';
+            const targetList = taskItem.classList.contains('completed-task') ? completedTaskList : taskList;
+            targetList.appendChild(taskItem);
+        }
+
+        function deleteTask(button) {
+            const taskItem = button.parentNode;
+            taskItem.remove();
+        }
+
+        taskInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                addTask();
+            }
+        });
+    </script>
+
+</body>
+</html>
