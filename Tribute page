@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admiring sundar-pichai-powerful-corporate-leader</title>
+    <style>
+        body {
+            font-family: 'Georgia', Georgia, 'Times New Roman', Times, serif;
+            background-color: #5459b4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0c60e7;
+            color: #15ace3;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #dcf212;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(134, 6, 189, 0.1);
+            text-align: justify;
+        }
+
+        img {
+            display: block;
+            max-width: 20%;
+            margin:auto;
+            padding: 10px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #da0e55;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Admiring Sundar Pichai-CEO of Google</h1>
+    </header>
+
+    <section>
+       <img src="sundu.png" alt="Sundar Pichai"> 
+        <p><b>Sundar Pichai, the CEO of Google, is an inspiring figure in the tech industry. His leadership and vision have played a crucial role in shaping the future of Google and the entire technology landscape.</b></p>
+        
+        <p><b>One of the admirable qualities of Sundar Pichai is his commitment to innovation and pushing the boundaries of what technology can achieve. His strategic decisions have led to the development of groundbreaking products and services.</b></p>
+
+        <p><b>Furthermore, Pichai's humble beginnings and journey to the top serve as a testament to hard work and dedication. His focus on inclusivity and diversity in the workplace reflects a commitment to creating a positive and forward-thinking corporate culture.</p>
+
+        <p>As we look to the future, Sundar Pichai continues to lead Google with passion and foresight, ensuring that the company remains at the forefront of technological advancements.</b></p>
+    </section>
+
+    <footer>
+        <p>Created with ❤ by Olivia Saha</p> 
+    </footer>
+
+</body>
+</html>
